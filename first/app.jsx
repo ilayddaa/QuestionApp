@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; // Burada React ve useState'i import ediyoruz
 import StartScreen from './components/startscreen'; // StartScreen bileşenini import ediyoruz
-import QuestionScreen from './components/questionscreen'; // QuestionScreen bileşenini import ediyoruz
+import QuestionScreen from './components/QuestionScreen'; // QuestionScreen bileşenini import ediyoruz
 import ResultScreen from './components/resultscreen'; // ResultScreen bileşenini import ediyoruz
 import questions from './data/questions'; // Soruları içeren data dosyasını import ediyoruz
 
