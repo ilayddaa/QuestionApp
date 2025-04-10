@@ -47,7 +47,7 @@ const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
             <img
                 src={question.media}
                 alt="soru"
-                className="rounded-xl shadow-xl w-full max-w-[700px] h-[350px] object-cover mb-6 border-4 border-pink-500"
+                className="rounded-xl shadow-xl w-full max-w-[600px] h-[250px] object-cover mb-6 border-4 border-pink-500"
             />
 
             <p className="text-xl font-semibold text-center mb-6 max-w-[800px] leading-relaxed">
