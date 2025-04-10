@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
+// QuestionScreen bileşeni, bir soruyu ve şıkları gösteren bir bileşendir.
 const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
-    const [timeLeft, setTimeLeft] = useState(30);
-    const [showOptions, setShowOptions] = useState(false);
-    const [selected, setSelected] = useState(null);
+    const [timeLeft, setTimeLeft] = useState(30); // Başlangıçta 30 saniye
+    const [showOptions, setShowOptions] = useState(false); // Şıkları gösterme durumu
+    const [selected, setSelected] = useState(null); // Seçilen şık
 
+    // Sorular değiştiğinde zamanlayıcıyı sıfırla ve şıkları göster
     useEffect(() => {
         setTimeLeft(30);
-        setShowOptions(false);
-        setSelected(null);
+        setShowOptions(false); // Şıkları gizle
+        setSelected(null); // Seçimi sıfırla
 
+        // Zamanlayıcıyı başlat
         const timer = setInterval(() => {
             setTimeLeft((prev) => prev - 1);
-        }, 1000);
+        }, 1000); // Her saniye güncelle
 
         const showOptionsTimeout = setTimeout(() => setShowOptions(true), 4000); // 4 saniye sonra şıkları göster
 
+        // Eğer zaman dolarsa, otomatik olarak cevap ver
         const autoNextTimeout = setTimeout(() => {
             if (!selected) onAnswer(null);
         }, 30000);
@@ -27,6 +31,7 @@ const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
         };
     }, [question]);
 
+    // Zamanlayıcı sıfırlandığında, zamanlayıcıyı temizle
     const handleClick = (option) => {
         if (selected) return;
         setSelected(option);
@@ -60,7 +65,8 @@ const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
                 ></div>
             </div>
 
-            {showOptions ? (
+
+            {showOptions ? ( // Şıkları göster
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-[600px]">
                     {question.options.map((opt) => (
                         <button
