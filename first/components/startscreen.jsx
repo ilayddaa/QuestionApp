@@ -28,7 +28,7 @@ const StartScreen = ({ onStart }) => {
                 className="w-[200px] h-[200px] mt-12 rounded-xl shadow-lg border border-pink-400"
             />
 
-            <p className="mt-4 italic text-pink-300 text-center text-sm sm:text-base">
+            <p className="mt-4 italic text-white text-center text-sm sm:text-base">
                 “Gölgeyi kovalayan suya atlamayı göze almalı.”
             </p>
         </div>

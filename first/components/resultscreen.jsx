@@ -41,7 +41,7 @@ const ResultScreen = ({ answers, questions }) => { // ResultScreen bileşenini t
                 className="mt-10 w-[200px] rounded-xl border border-pink-400 shadow-lg"
             />
 
-            <p className="mt-4 italic text-pink-300 text-center text-sm sm:text-base">
+            <p className="mt-4 italic text-white text-center text-sm sm:text-base">
                 “Her boş kutu umut taşır, ama en cesur kedi ilk girer.”
             </p>
         </div>
