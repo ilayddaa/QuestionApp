@@ -63,12 +63,12 @@ const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-[600px]">
                     {question.options.map((opt) => (
                         <button
-                            key={opt}
-                            onClick={() => handleClick(opt)}
-                            className={`px-6 py-3 rounded-xl text-lg font-semibold border-2 transition duration-300 shadow-lg ${selected === opt
-                                ? 'bg-pink-600 text-white scale-105'
-                                : 'bg-white text-black hover:bg-pink-100 hover:text-black'
-                                }`}
+                            key={opt} // Her seçenek için benzersiz bir anahtar
+                            onClick={() => handleClick(opt)} // Seçenek tıklandığında handleClick fonksiyonunu çağır
+                            className={`px-6 py-3 rounded-xl text-lg font-semibold border-2 transition duration-300 shadow-lg ${selected === opt // Seçenek seçilmişse. Semibold: Kalın yazı tipi 
+                                ? 'bg-pink-600 text-white scale-105' // Seçenek seçildiğinde. Scale: Büyütme efekti
+                                : 'bg-white text-black hover:bg-pink-100 hover:text-black' // Seçenek seçilmediğinde
+                                }`} // ? soru işareti burada ternary operatörünü temsil eder. Ternary operatörü, bir koşula bağlı olarak iki farklı değeri döndürür.
                         >
                             {opt}
                         </button>
