@@ -1,0 +1,79 @@
+body {
+    font-family: sans-serif;
+    background: linear-gradient(to right, rgb(169, 88, 147) 30%, rgb(225, 179, 221) 70%);
+    color: #333;
+}
+
+.questions {
+    margin-top: 50px
+}
+
+.sonucekran {
+    margin-top: 50px;
+}
+
+.sonuc {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:
+}
+
+.dogru {
+    color: green;
+}
+
+.yanlis {
+    color: red;
+}
+
+.bos {
+    color: #000000;
+}
+
+.kedi {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    color: rgb(157, 51, 88);
+}
+
+.startdog {
+    position: relative;
+    height: 300px;
+    margin-left: 555px;
+    margin-top: 50px;
+    image-rendering: pixelated;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.kopek {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    color: rgb(157, 51, 88);
+}
+
+.endcat {
+    position: relative;
+    height: 300px;
+    margin-left: 595px;
+    margin-top: 50px;
+    image-rendering: pixelated;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.photos {
+    position: relative;
+    height: 300px;
+    margin-left: 595px;
+    margin-top: 50px;
+    image-rendering: pixelated;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure Tailwind CSS is properly configured */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Added Tailwind directives */
