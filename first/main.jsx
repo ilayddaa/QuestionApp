@@ -1,11 +1,11 @@
-// main.jsx
-import React from 'react'; // React kütüphanesini import ediyoruz
-import ReactDOM from 'react-dom/client'; // ReactDOM kütüphanesini import ediyoruz
-import App from './app'; // App bileşenini import ediyoruz
-import './index.css'; // CSS dosyasını import ediyoruz
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render( // root elementini bulup render ediyoruz
+ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <App />
-    </React.StrictMode>
-);
+    </React.StrictMode>,
+)
+// Bu sayfa React uygulamanızın başlangıç noktasıdır.
