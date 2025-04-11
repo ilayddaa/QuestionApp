@@ -1,8 +1,8 @@
 import React, { useState } from 'react'; // Burada React ve useState'i import ediyoruz
-import StartScreen from "./first/components/StartScreen"; // StartScreen bileşenini import ediyoruz
-import QuestionScreen from './first/components/QuestionScreen'; // QuestionScreen bileşenini import ediyoruz
-import ResultScreen from './first/components/ResultScreen'; // ResultScreen bileşenini import ediyoruz
-import questions from './first/data/questions'; // Soruları içeren data dosyasını import ediyoruz
+import StartScreen from "./components/StartScreen"; // StartScreen bileşenini import ediyoruz
+import QuestionScreen from './components/QuestionScreen'; // QuestionScreen bileşenini import ediyoruz
+import ResultScreen from './components/ResultScreen'; // ResultScreen bileşenini import ediyoruz
+import questions from './data/questions'; // Soruları içeren data dosyasını import ediyoruz
 
 const App = () => { // Ana App bileşenini tanımlıyoruz
     const [step, setStep] = useState('start'); // Başlangıç adımını 'start' olarak ayarlıyoruz
