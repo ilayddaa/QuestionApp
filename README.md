@@ -51,26 +51,7 @@ Bu proje, kullanıcıların bilgi paylaşımını kolaylaştırmak ve topluluk t
 
 
 ### Netlify
-![Kullanıcı Profili](screenshots/user-profile.png)
-
----
-
-## Katkıda Bulunma
-
-1. Bu projeyi forklayın.
-2. Yeni bir dal oluşturun:
-    ```bash
-    git checkout -b feature/yenilik
-    ```
-3. Değişikliklerinizi yapın ve commit edin:
-    ```bash
-    git commit -m "Yeni özellik eklendi"
-    ```
-4. Dalınızı gönderin:
-    ```bash
-    git push origin feature/yenilik
-    ```
-5. Bir Pull Request oluşturun.
+![Kullanıcı Profili]()
 
 ---
 
@@ -82,4 +63,4 @@ Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` d
 
 ## İletişim
 
-Herhangi bir sorunuz varsa, lütfen [ilayda@example.com](mailto:ilayda@example.com) adresinden iletişime geçin.
+Herhangi bir sorunuz varsa, lütfen [ilydatass@gmail.com](mailto:ilydatass@gmail.com) adresinden iletişime geçin.
