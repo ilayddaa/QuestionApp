@@ -38,10 +38,6 @@ Bu proje, kullanıcıların bilgi paylaşımını kolaylaştırmak ve topluluk t
     npm start
     ```
 
-4. **Tarayıcıda Açın**:
-    Uygulama genellikle `http://localhost:5173` adresinde çalışır.
-
----
 
 
 ## Ekran Görüntüleri
@@ -51,7 +47,7 @@ Bu proje, kullanıcıların bilgi paylaşımını kolaylaştırmak ve topluluk t
 
 
 ### Netlify
-![Kullanıcı Profili]()
+![Kullanıcı Profili](https://question-app-ncr1.vercel.app)
 
 ---
 
