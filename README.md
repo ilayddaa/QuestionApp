@@ -1,3 +1,11 @@
+### Netlify
+![Kullanıcı Profili](https://question-app-s6eh.vercel.app)
+
+
+### Ana Sayfa
+![Ana Sayfa](screenshots.jpg)
+
+
 # QuestionApp
 
 QuestionApp, kullanıcıların sorular sormasına ve cevaplar almasına olanak tanıyan bir uygulamadır. Bu README dosyası, projenin amacını, kurulum adımlarını, özelliklerini ve ekran görüntüleri için bir bölüm içermektedir.
@@ -38,16 +46,6 @@ Bu proje, kullanıcıların bilgi paylaşımını kolaylaştırmak ve topluluk t
     npm start
     ```
 
-
-
-## Ekran Görüntüleri
-
-### Ana Sayfa
-![Ana Sayfa](screenshots.jpg)
-
-
-### Netlify
-![Kullanıcı Profili](https://question-app-ncr1.vercel.app)
 
 ---
 
