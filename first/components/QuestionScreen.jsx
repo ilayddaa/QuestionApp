@@ -1,46 +1,64 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-// QuestionScreen bileşeni, bir soruyu ve şıkları gösteren bir bileşendir.
 const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
-    const [timeLeft, setTimeLeft] = useState(30); // Başlangıçta 30 saniye
-    const [showOptions, setShowOptions] = useState(false); // Şıkları gösterme durumu
-    const [selected, setSelected] = useState(null); // Seçilen şık
+    const [timeLeft, setTimeLeft] = useState(30);
+    const [showOptions, setShowOptions] = useState(false);
+    const [selected, setSelected] = useState(null);
 
-    // Sorular değiştiğinde zamanlayıcıyı sıfırla ve şıkları göster
     useEffect(() => {
         setTimeLeft(30);
-        setShowOptions(false); // Şıkları gizle
-        setSelected(null); // Seçimi sıfırla
+        setShowOptions(false);
+        setSelected(null);
 
-        // Zamanlayıcıyı başlat
         const timer = setInterval(() => {
-            setTimeLeft((prev) => prev - 1);
-        }, 1000); // Her saniye güncelle
+            setTimeLeft((prev) => {
+                if (prev <= 1) {
+                    clearInterval(timer);
+                    if (!selected) {
+                        onAnswer(null); // Süre bitince otomatik geç
+                    }
+                    return 0;
+                }
+                return prev - 1;
+            });
+        }, 1000);
 
-        const showOptionsTimeout = setTimeout(() => setShowOptions(true), 4000); // 4 saniye sonra şıkları göster
-
-        // Eğer zaman dolarsa, otomatik olarak cevap ver
-        const autoNextTimeout = setTimeout(() => {
-            if (!selected) onAnswer(null);
-        }, 30000);
+        const showOptionsTimeout = setTimeout(() => setShowOptions(true), 4000);
 
         return () => {
             clearInterval(timer);
             clearTimeout(showOptionsTimeout);
-            clearTimeout(autoNextTimeout);
         };
     }, [question]);
 
-    // Zamanlayıcı sıfırlandığında, zamanlayıcıyı temizle
     const handleClick = (option) => {
         if (selected) return;
         setSelected(option);
-        setTimeout(() => onAnswer(option), 500);
+
+        setTimeout(() => {
+            onAnswer(option);
+        }, 1500); // Doğru şık gösterildikten sonra geçiş
+    };
+
+    const getButtonClass = (opt) => {
+        if (!selected) {
+            return "bg-white text-black hover:bg-pink-100";
+        }
+
+        if (opt === question.correctAnswer) {
+            return "bg-green-600 text-white scale-105"; // ✅ Doğru şık
+        }
+
+        if (opt === selected && opt !== question.correctAnswer) {
+            return "bg-red-600 text-white scale-105"; // ❌ Seçilen ama yanlış şık
+        }
+
+        return "bg-gray-300 text-black opacity-70"; // Diğerleri
     };
 
     return (
         <div className="min-h-screen text-white flex flex-col items-center justify-start px-6 py-10">
-            <h2 className="text-2xl font-extrabold mb-6 text-white tracking-wide animate-pulse">
+            <h2 className="text-2xl font-extrabold mb-6 tracking-wide animate-pulse">
                 🧠 Soru {questionIndex} / {total}
             </h2>
 
@@ -65,17 +83,16 @@ const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
                 ></div>
             </div>
 
-
-            {showOptions ? ( // Şıkları göster
+            {showOptions ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-[600px]">
                     {question.options.map((opt) => (
                         <button
                             key={opt}
                             onClick={() => handleClick(opt)}
-                            className={`px-6 py-3 rounded-xl text-lg font-semibold border-2 transition duration-300 shadow-lg ${selected === opt
-                                ? 'bg-pink-600 text-white scale-105'
-                                : 'bg-white text-black hover:bg-pink-100 hover:text-black'
-                                }`}
+                            disabled={!!selected}
+                            className={`px-6 py-3 rounded-xl text-lg font-semibold border-2 transition duration-300 shadow-lg ${getButtonClass(
+                                opt
+                            )}`}
                         >
                             {opt}
                         </button>
