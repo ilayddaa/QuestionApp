@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react"; // React ve useEffect, useState kütüphanelerini içe aktarıyoruz
+import React, { useEffect, useState } from "react";
 
-//Burada soruların ve cevapların olduğu bir bileşen oluşturuyoruz
 const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
     const [timeLeft, setTimeLeft] = useState(30); // Başlangıçta 30 saniye süre
     const [showOptions, setShowOptions] = useState(false); // Şıkları gösterip göstermeyeceğimizi kontrol eden state
     const [selected, setSelected] = useState(null); // Seçilen şıkkı tutan state
 
-    // useEffect, bileşen yüklendiğinde ve question değiştiğinde çalışacak
     useEffect(() => {
         setTimeLeft(30); // Her yeni soru geldiğinde süreyi sıfırla
         setShowOptions(false); // Şıkları gizle
@@ -36,17 +34,15 @@ const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
         };
     }, [question]);
 
-    // Şık tıklama fonksiyonu
     const handleClick = (option) => {
-        if (selected) return;
+        if (selected) return; // Eğer bir seçenek seçildiyse, tekrar seçime izin verme
         setSelected(option);
 
         setTimeout(() => {
-            onAnswer(option);
+            onAnswer(option); // Seçilen şık üzerinden yanıtı gönder
         }, 1500); // Doğru şık gösterildikten sonra geçiş
     };
 
-    // Buton sınıfını belirleyen fonksiyon
     const getButtonClass = (opt) => {
         if (!selected) {
             return "bg-white text-black hover:bg-pink-100";
@@ -91,13 +87,12 @@ const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
             </div>
 
             {showOptions ? (
-                // Şıkları göster
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-[600px]">
                     {question.options.map((opt) => (
                         <button
                             key={opt}
                             onClick={() => handleClick(opt)}
-                            disabled={!!selected}
+                            disabled={!!selected} // Seçim yapıldıysa butonları devre dışı bırak
                             className={`px-6 py-3 rounded-xl text-lg font-semibold border-2 transition duration-300 shadow-lg ${getButtonClass(
                                 opt
                             )}`}
