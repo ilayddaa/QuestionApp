@@ -68,7 +68,7 @@ const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
             <img
                 src={question.media}
                 alt="soru"
-                className="rounded-xl shadow-xl w-full max-w-[600px] h-[250px] object-cover mb-6 border-4 border-pink-500"
+                className="rounded-xl shadow-xl w-full max-w-[600px] h-[250px] object-cover mb-6 border-4 border-pink-300"
             />
 
             <p className="text-xl font-semibold text-center mb-6 max-w-[800px] leading-relaxed">
@@ -81,7 +81,7 @@ const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
 
             <div className="w-full max-w-[600px] h-4 bg-gray-300 rounded-full mb-6">
                 <div
-                    className="h-full bg-pink-500 rounded-full transition-all duration-1000"
+                    className="h-full bg-pink-300 rounded-full transition-all duration-1000"
                     style={{ width: `${(timeLeft / 30) * 100}%` }}
                 ></div>
             </div>
