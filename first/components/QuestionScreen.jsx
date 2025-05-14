@@ -75,7 +75,7 @@ const QuestionScreen = ({ question, onAnswer, questionIndex, total }) => {
                 {question.question}
             </p>
 
-            <p className="text-lg font-bold text-yellow-300 mb-2 animate-pulse">
+            <p className="text-lg font-bold text-pink-100 mb-2 animate-pulse">
                 ⏳ Kalan Süre: {timeLeft} saniye
             </p>
 
